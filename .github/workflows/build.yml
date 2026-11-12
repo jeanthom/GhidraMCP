@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GHIDRA_VERSION: 12.2
-      GHIDRA_DATE: 20261023
+      GHIDRA_DATE: 20261016
 
     steps:
     - uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
     - name: Set up uv
       uses: astral-sh/setup-uv@v6
 
-    - name: Download Ghidra (test)
+    - name: Download Ghidra
       run: |
         wget --no-verbose -O ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${GHIDRA_VERSION}_build/ghidra_${GHIDRA_VERSION}_PUBLIC_${GHIDRA_DATE}.zip
         7z x -bd ghidra.zip
