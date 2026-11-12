@@ -1,6 +1,6 @@
 // Builds the GhidraMCP Ghidra extension against a local Ghidra installation.
 //
-//     export GHIDRA_INSTALL_DIR=/path/to/ghidra_12.1.4_PUBLIC
+//     export GHIDRA_INSTALL_DIR=/path/to/ghidra_12.2_PUBLIC
 //     gradle
 //
 // The extension ZIP is written to dist/.

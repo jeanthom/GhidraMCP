@@ -24,7 +24,7 @@ MCP Server + Ghidra Plugin
 # Installation
 
 ## Prerequisites
-- Install [Ghidra](https://ghidra-sre.org) 12.1.4
+- Install [Ghidra](https://ghidra-sre.org) 12.2
 - Install [uv](https://docs.astral.sh/uv/) (or Python 3.10+ with `pip install git+https://github.com/LaurieWired/GhidraMCP`, then use `ghidra-mcp` as the command below)
 
 ## Ghidra
@@ -33,7 +33,7 @@ First, download the latest [release](https://github.com/LaurieWired/GhidraMCP/re
 1. Run Ghidra
 2. Select `File` -> `Install Extensions`
 3. Click the `+` button
-4. Select the `ghidra_12.1.4_PUBLIC_<date>_GhidraMCP.zip` from the downloaded release
+4. Select the `ghidra_12.2_PUBLIC_<date>_GhidraMCP.zip` from the downloaded release
 5. Restart Ghidra
 6. Make sure the GhidraMCPPlugin is enabled in `File` -> `Configure` -> `Developer`
 7. *Optional*: Configure the port in Ghidra with `Edit` -> `Tool Options` -> `GhidraMCP HTTP Server`
@@ -105,7 +105,7 @@ claude mcp add ghidra -- uvx --from git+https://github.com/LaurieWired/GhidraMCP
 ```
 
 ## Headless (no Ghidra GUI)
-`ghidra-mcp` can also import and analyze a binary itself using [PyGhidra](https://pypi.org/project/pyghidra/), with no Ghidra GUI running. This needs Python 3.10–3.13, the GhidraMCP extension installed in Ghidra (or `--extension-jar /path/to/GhidraMCP.jar`), and `GHIDRA_INSTALL_DIR` set to your Ghidra 12.1.4 directory:
+`ghidra-mcp` can also import and analyze a binary itself using [PyGhidra](https://pypi.org/project/pyghidra/), with no Ghidra GUI running. This needs Python 3.10–3.13, the GhidraMCP extension installed in Ghidra (or `--extension-jar /path/to/GhidraMCP.jar`), and `GHIDRA_INSTALL_DIR` set to your Ghidra 12.2 directory:
 
 ```
 uvx --python 3.13 --from "ghidra-mcp[headless] @ git+https://github.com/LaurieWired/GhidraMCP" ghidra-mcp --headless --binary /path/to/target
@@ -114,8 +114,8 @@ uvx --python 3.13 --from "ghidra-mcp[headless] @ git+https://github.com/LaurieWi
 Use the same command and arguments in any of the client configs above. Add `--project DIR` to keep the Ghidra project (and save changes) between runs. On macOS, build Ghidra's decompiler once with `support/gradle/gradlew buildNatives` from the Ghidra directory.
 
 # Building from Source
-1. Set `GHIDRA_INSTALL_DIR` to your Ghidra 12.1.4 directory
-2. Build the extension with Gradle (Java 21) by running:
+1. Set `GHIDRA_INSTALL_DIR` to your Ghidra 12.2 directory
+2. Build the extension with Gradle (Java 25) by running:
 
 `cd extension && $GHIDRA_INSTALL_DIR/support/gradle/gradlew buildExtension`
 
