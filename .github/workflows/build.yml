@@ -30,7 +30,7 @@ jobs:
     - name: Set up uv
       uses: astral-sh/setup-uv@v6
 
-    - name: Download Ghidra
+    - name: Download Ghidra (test)
       run: |
         wget --no-verbose -O ghidra.zip https://github.com/NationalSecurityAgency/ghidra/releases/download/Ghidra_${GHIDRA_VERSION}_build/ghidra_${GHIDRA_VERSION}_PUBLIC_${GHIDRA_DATE}.zip
         7z x -bd ghidra.zip
